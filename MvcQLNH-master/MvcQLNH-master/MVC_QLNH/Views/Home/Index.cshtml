@@ -1,0 +1,239 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var data_HomeController = ViewBag.ViewModel;
+}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Orver View</h1>
+    </div>
+
+    <!-- Content Row -->
+    <div class="row">
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
+                                Doanh thu hôm nay
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                                @data_HomeController.totalAmount.ToString("#,##0")
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-chart-bar fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+                                Khách hàng
+                            </div>
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">@data_HomeController.totalCustom</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-users fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Earnings (Monthly) Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-info shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-info text-uppercase mb-1">
+                                Bàn còn trống
+                            </div>
+                            <div class="row no-gutters align-items-center">
+                                <div class="col-auto">
+                                    <div class="h5 mb-0 mr-3 font-weight-bold text-gray-800">@data_HomeController.totalTableEmpty/20</div>
+                                </div>
+                                <div class="col">
+                                    <div class="progress progress-sm mr-2">
+                                        <div class="progress-bar bg-info" role="progressbar"
+                                             style="width: 50%" aria-valuenow="50" aria-valuemin="0"
+                                             aria-valuemax="100"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-table fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pending Requests Card Example -->
+        <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-left-warning shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">
+                                Bán chạy nhất
+                            </div>
+                            @if (data_HomeController.nameFoodBestSell == null)
+                            {
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">Không có</div>
+                            }
+                            else
+                            {
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@data_HomeController.nameFoodBestSell.FoodName (@data_HomeController.percentage.ToString("#,##0")%)</div>
+                            }
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-dumpster-fire fa-2x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Content Row -->
+
+    <div class="row">
+
+        <!-- Area Chart -->
+        <div class="col-xl-8 col-lg-7">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Doanh thu</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                    <div class="chart-area">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie Chart -->
+        <div class="col-xl-4 col-lg-5">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                    <h6 class="m-0 font-weight-bold text-primary">Lịch sử thanh toán gần đây</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body d-flex justify-content-center" style="padding: 0rem 0rem 5.2rem 0rem">
+                    <div class="chart-pie pt-4 pb-2" style="padding-top: 0rem !important">
+                        @* <canvas id="myPieChart"></canvas> *@
+                        <table class="table">
+                            @foreach (var data in @data_HomeController.detailTable)
+                            {
+                            <tr class="text-center">
+                            <th style="border-bottom: 1px solid #e3e6f0;" align="center" scope="row">ID_@data.BillId: Bàn @data.TableID vừa thanh toán @data.TotalPrice vnd</th>
+                            </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    // Lấy tham chiếu đến canvas
+    var ctx = document.getElementById('myChart');
+
+    var monthlyData = @Html.Raw(Json.Serialize(data_HomeController.monthlyTotal));
+
+    var months = ["Th01", "Th02", "Th03", "Th04", "Th05", "Th06", "Th07", "Th08", "Th09", "Th10", "Th11", "Th12"];
+
+    // Khai báo mảng để lưu tổng giá trị từng tháng
+    var monthlyTotal = new Array(12).fill(0); // Khởi tạo mảng có 12 phần tử, mỗi phần tử có giá trị ban đầu là 0
+
+    // Duyệt qua mảng dữ liệu của bạn để tính tổng giá trị từng tháng
+    for (var i = 0; i < monthlyData.length; i++) {
+        var monthIndex = monthlyData[i].month - 1; // Vì mảng bắt đầu từ 0, còn tháng bắt đầu từ 1 nên cần trừ đi 1
+        monthlyTotal[monthIndex] += monthlyData[i].totalAmount; // Cộng tổng giá trị của mỗi mục vào mảng tương ứng với tháng
+    }
+
+    // Tạo biểu đồ
+    var myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: months,
+            datasets: [{
+                label: "Earnings",
+                lineTension: 0.3,
+                backgroundColor: "rgba(78, 115, 223, 0.05)",
+                borderColor: "rgba(78, 115, 223, 1)",
+                pointRadius: 3,
+                pointBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointBorderColor: "rgba(78, 115, 223, 1)",
+                pointHoverRadius: 3,
+                pointHoverBackgroundColor: "rgba(78, 115, 223, 1)",
+                pointHoverBorderColor: "rgba(78, 115, 223, 1)",
+                pointHitRadius: 10,
+                pointBorderWidth: 2,
+                data: monthlyTotal,
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    left: 10,
+                    right: 25,
+                    top: 0,
+                    bottom: 15
+                }
+            },
+            scales: {
+                xAxes: [{
+                    time: {
+                        unit: 'date'
+                    },
+                    gridLines: {
+                        display: false,
+                        drawBorder: false
+                    },
+                    ticks: {
+                        maxTicksLimit: 12
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        maxTicksLimit: 12,
+                        padding: 10
+                    },
+                    gridLines: {
+                        color: "rgb(234, 236, 244)",
+                        zeroLineColor: "rgb(234, 236, 244)",
+                        drawBorder: false,
+                        borderDash: [2],
+                        zeroLineBorderDash: [2]
+                    }
+                }],
+            },
+        }
+    });
+</script>

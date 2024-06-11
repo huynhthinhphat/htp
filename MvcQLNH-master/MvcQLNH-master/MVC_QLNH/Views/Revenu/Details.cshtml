@@ -1,0 +1,61 @@
+﻿@model MVC_QLNH.Models.TbBillHistory
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+
+<div>
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">CHI TIẾT HÓA ĐƠN</h1>
+    </div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            SỐ LƯỢNG
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Quantity)
+        </dd>
+        <dt class = "col-sm-2">
+            GIÁ TIỀN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Price)
+        </dd>
+        <dt class = "col-sm-2">
+            TỔNG TIỀN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TotalPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            THỜI GIAN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BillDate)
+        </dd>
+        <dt class = "col-sm-2">
+            TÊN MÓN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Food.FoodName)
+        </dd>
+        <dt class = "col-sm-2">
+            BÀN SỐ
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Table.TableId)
+        </dd>
+        <dt class = "col-sm-2">
+            NHÂN VIÊN
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserInfo.FullName)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.BillId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

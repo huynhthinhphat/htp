@@ -1,0 +1,130 @@
+﻿@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<MVC_QLNH.Models.TbBillHistory>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    td {
+        text-align: center;
+        background-color: #fff;
+    }
+
+    .table thead th {
+        text-align: center;
+        background-color: #f8f9fc;
+    }
+
+    .table {
+        box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important;
+    }
+
+    #content_index {
+        display: flex;
+        flex-direction: column;
+        padding: 0px 2%;
+    }
+</style>
+
+<div id="content_index">
+    <!-- Page Heading -->
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">DOANH THU</h1>
+    </div>
+    <form asp-action="Index" method="get">
+        <label>Tìm kiếm theo</label>
+        <select name="SearchOption">
+            <option value="BillId">ID Hóa đơn</option>
+            <option value="TableID">ID Bàn</option>
+        </select>
+        <input type="text" name="searchString_id" value="@ViewData["CurrentFilter_id"]" placeholder="Id tìm kiếm..."/>
+
+        <label>Thời gian từ</label>
+        <input type="date" name="searchString_startTime" value="@ViewData["CurrentFilter_startTime"]" placeholder="Thời gian từ..." />
+        <label>đến</label>
+        <input type="date" name="searchString_endTime" value="@ViewData["CurrentFilter_endTime"]" placeholder="đến thời gian..." />
+        <input type="submit" value="Lọc" />
+    </form>
+    <a asp-action="Index">Back to Full List</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                ID HÓA ĐƠN
+            </th>
+            <th>
+                ID BÀN
+            </th>
+            <th>
+                TỔNG TIỀN
+            </th>
+            <th>
+               THỜI GIAN
+            </th>
+            <th>
+                NHÂN VIÊN
+            </th>
+            <th>Chức năng</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+            <tr>
+            <td>
+               @Html.DisplayFor(modelItem => item.BillId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Table.TableId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TotalPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BillDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserInfo.FullName)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.BillId">Chi tiết</a>
+                <form asp-action="Delete" asp-route-id="@item.BillId" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa hóa đơn này không?');">
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    <!-- Phân trang -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Phân trang -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        @if (Model.PageCount > 1)
+                        {
+                            for (int i = 1; i <= Model.PageCount; i++)
+                            {
+                                <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hiển thị số trang và số món -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Số trang: @Model.PageCount</p>
+                <p>Số hóa đơn: @Model.TotalItemCount</p>
+            </div>
+        </div>
+    </div>
+</div>

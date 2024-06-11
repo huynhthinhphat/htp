@@ -1,0 +1,123 @@
+﻿@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<MVC_QLNH.Models.TbFood>
+
+@{
+    ViewBag.Title = "Danh sách sản phẩm";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@* <div class="container">
+
+    <!-- Dropdown Danh mục thức ăn -->
+    <<div class="row mb-4">
+        <div class="col-md-6">
+            <select id="categoryDropdown" class="form-select">
+                <option value="">Chọn danh mục</option>
+
+                    @foreach (var danhmuc in FoodViewModel.)
+                    {
+                        <option value="@danhmuc.DmfoodId">@danhmuc.CategoryName</option>
+                    }
+                
+            </select>
+        </div>
+    </div>
+
+    <div class="row">
+        @foreach (var food in Model)
+        {
+            <div class="col-md-4 mb-4">
+                <!-- Hiển thị thông tin món ăn -->
+            </div>
+        }
+    </div>
+
+    <!-- Nút "Thêm món" -->
+    <button id="addFoodBtn" class="btn btn-primary">Thêm món</button>
+
+</div>
+
+<!-- Dialog Thêm món -->
+<div id="addFoodModal" class="modal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Thêm món</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Form nhập thông tin món ăn -->
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button id="saveFoodBtn" type="button" class="btn btn-primary">Lưu</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+ *@
+<div class="container">
+
+    <div class="row">
+        
+            @foreach (var food in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card">
+                        <img @* src="@food.ImageUrl" *@ src="../Image/ccoca.jfif" class="card-img-top" alt="@food.FoodName">
+                        <div class="card-body">
+                            <h5 class="card-title">@food.FoodName</h5>
+                            <p class="card-text">Giá: @food.Price</p>
+                            <div class="row align-items-center">
+                                <div class="col">
+                                    <span class="badge bg-success">@food.FoodName</span>
+                                </div>
+                                <div class="col">
+                                    <a asp-action="Edit" asp-route-id="@food.FoodId" class="btn btn-primary btn-sm rounded-circle">
+                                        <i class="fas fa-pencil-alt"></i>
+                                    </a>
+                                </div>
+                                <div class="col">
+                                    <a asp-action="Delete" asp-route-id="@food.FoodId" class="btn btn-danger btn-sm rounded-circle">
+                                        <i class="fas fa-trash-restore-alt"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        
+    </div>
+    <!-- Phân trang -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <!-- Phân trang -->
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-center">
+                        @if (Model.PageCount > 1)
+                        {
+                            for (int i = 1; i <= Model.PageCount; i++)
+                            {
+                                <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                                </li>
+                            }
+                        }
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hiển thị số trang và số món -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <p>Số trang: @Model.PageCount</p>
+                <p>Số món: @Model.TotalItemCount</p>
+            </div>
+        </div>
+    </div>
+</div>
