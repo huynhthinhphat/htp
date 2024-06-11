@@ -36,6 +36,7 @@ namespace MVC_QLNH.Controllers
             ViewData["CurrentFilter_id"] = searchString_id;
             ViewData["CurrentFilter_startTime"] = searchString_startTime;
             ViewData["CurrentFilter_endTime"] = searchString_endTime;
+            ViewData["CurrentFilter_option"] = searchOption;
 
             if (searchString_id != null)
             {
@@ -48,8 +49,15 @@ namespace MVC_QLNH.Controllers
                     case "TableID":
                         if (searchString_startTime.HasValue && searchString_endTime.HasValue)
                         {
-                            // Lọc dữ liệu theo TableID và thời gian
-                            data = data.Where(s => s.BillDate >= searchString_startTime.Value && s.BillDate <= searchString_endTime.Value && s.TableID == searchString_id);
+                            if (searchString_startTime.Value > searchString_endTime.Value)
+                            {
+                                ModelState.AddModelError("", "Ngày bắt đầu phải nhỏ hơn ngày kết thúc.");
+                            }
+                            else
+                            {
+                                // Lọc dữ liệu theo TableID và thời gian
+                                data = data.Where(s => s.BillDate >= searchString_startTime.Value && s.BillDate <= searchString_endTime.Value && s.TableID == searchString_id);
+                            }
                         }
                         else if (searchString_startTime.HasValue)
                         {
@@ -73,8 +81,16 @@ namespace MVC_QLNH.Controllers
             {
                 if (searchString_startTime.HasValue && searchString_endTime.HasValue)
                 {
-                    // Lọc dữ liệu theo TableID và thời gian
-                    data = data.Where(s => s.BillDate >= searchString_startTime.Value && s.BillDate <= searchString_endTime.Value);
+                    if (searchString_startTime.Value > searchString_endTime.Value)
+                    {
+                        ViewBag.Message = "NHẬP SAI THỜI GIAN Ĩ MẸ MÀI!";
+                    }
+                    else
+                    {
+                        // Lọc dữ liệu theo TableID và thời gian
+                        data = data.Where(s => s.BillDate >= searchString_startTime.Value && s.BillDate <= searchString_endTime.Value);
+                    }
+                   
                 }
                 else if (searchString_startTime.HasValue)
                 {

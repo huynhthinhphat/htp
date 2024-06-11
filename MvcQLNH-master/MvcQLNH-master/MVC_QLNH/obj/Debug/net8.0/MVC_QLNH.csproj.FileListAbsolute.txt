@@ -533,3 +533,4 @@ C:\Users\phath\Desktop\project\MvcQLNH-master\MvcQLNH-master\MVC_QLNH\bin\Debug\
 C:\Users\phath\Desktop\project\MvcQLNH-master\MvcQLNH-master\MVC_QLNH\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
 C:\Users\phath\Desktop\project\MvcQLNH-master\MvcQLNH-master\MVC_QLNH\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\phath\Desktop\project\MvcQLNH-master\MvcQLNH-master\MVC_QLNH\bin\Debug\net8.0\runtimes\win\lib\net7.0\System.Windows.Extensions.dll
+C:\Users\phath\Desktop\project\MvcQLNH-master\MvcQLNH-master\MVC_QLNH\obj\Debug\net8.0\MVC_QLNH.sourcelink.json

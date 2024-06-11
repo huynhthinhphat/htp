@@ -2,8 +2,9 @@
 @model X.PagedList.IPagedList<MVC_QLNH.Models.TbBillHistory>
 @{
     ViewData["Title"] = "Index";
+    var option = ViewData["CurrentFilter_option"];
+    var searchString_startTime = ViewData["CurrentFilter_startTime"];
 }
-
 <style>
     td {
         text-align: center;
@@ -33,16 +34,31 @@
     </div>
     <form asp-action="Index" method="get">
         <label>Tìm kiếm theo</label>
+        @* <select name="SearchOption">
+            @if (@option == "BillId" || @option == null)
+            {
+
+            <option value="BillId" selected>ID Hóa đơn</option>
+                <option value="TableID">ID Bàn</option>
+            }
+            else if (@option == "TableID")
+            {
+                <option value="BillId">ID Hóa đơn</option>
+            <option value="TableID" selected>ID Bàn</option>
+            }
+        </select> *@
         <select name="SearchOption">
-            <option value="BillId">ID Hóa đơn</option>
-            <option value="TableID">ID Bàn</option>
+            <option value="BillId" selected="@((ViewData["CurrentFilter_option"] as string) == "BillId")">ID Hóa đơn</option>
+            <option value="TableID" selected="@((ViewData["CurrentFilter_option"] as string) == "TableID")">ID Bàn</option>
         </select>
         <input type="text" name="searchString_id" value="@ViewData["CurrentFilter_id"]" placeholder="Id tìm kiếm..."/>
-
+        <div>
+            @ViewBag.Message
+        </div>
         <label>Thời gian từ</label>
-        <input type="date" name="searchString_startTime" value="@ViewData["CurrentFilter_startTime"]" placeholder="Thời gian từ..." />
+        <input type="date" name="searchString_startTime" value="@((ViewData["CurrentFilter_startTime"] as DateOnly?)?.ToString("yyyy-MM-dd"))" />
         <label>đến</label>
-        <input type="date" name="searchString_endTime" value="@ViewData["CurrentFilter_endTime"]" placeholder="đến thời gian..." />
+        <input type="date" name="searchString_endTime" value="@((ViewData["CurrentFilter_endTime"] as DateOnly?)?.ToString("yyyy-MM-dd"))" />
         <input type="submit" value="Lọc" />
     </form>
     <a asp-action="Index">Back to Full List</a>
