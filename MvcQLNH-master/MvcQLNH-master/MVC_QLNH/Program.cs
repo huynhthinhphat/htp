@@ -6,12 +6,12 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var connectionString = builder.Configuration.GetConnectionString("SqlMvcQlnhPerfactContext");
-builder.Services.AddDbContext<SqlMvcQlnhPerfactContext>(x => x.UseSqlServer(connectionString));
+var connectionString = builder.Configuration.GetConnectionString("LatMvcQlnhContext");
+builder.Services.AddDbContext<LatMvcQlnhContext>(x => x.UseSqlServer(connectionString));
 
 
 builder.Services.AddSession();
-
+builder.Services.AddHttpContextAccessor();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

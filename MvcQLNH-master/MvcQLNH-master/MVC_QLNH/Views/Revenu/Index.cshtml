@@ -2,15 +2,12 @@
 @model X.PagedList.IPagedList<MVC_QLNH.Models.TbBillHistory>
 @{
     ViewData["Title"] = "Index";
-    var option = ViewData["CurrentFilter_option"];
-    var searchString_startTime = ViewData["CurrentFilter_startTime"];
 }
 <style>
     td {
         text-align: center;
         background-color: #fff;
     }
-
     .table thead th {
         text-align: center;
         background-color: #f8f9fc;
@@ -20,90 +17,111 @@
         box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important;
     }
 
+    .table td{
+        padding: .4rem 0rem;
+        vertical-align: middle;
+    }
+
     #content_index {
         display: flex;
         flex-direction: column;
         padding: 0px 2%;
     }
+
+    .table .btn-danger {
+        background-color: #dc3545;
+        color: #fff;
+    }
+
 </style>
+
+@{
+    ViewData["Title"] = "Index";
+}
 
 <div id="content_index">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
         <h1 class="h3 mb-0 text-gray-800">DOANH THU</h1>
     </div>
-    <form asp-action="Index" method="get">
-        <label>Tìm kiếm theo</label>
-        @* <select name="SearchOption">
-            @if (@option == "BillId" || @option == null)
-            {
 
-            <option value="BillId" selected>ID Hóa đơn</option>
-                <option value="TableID">ID Bàn</option>
-            }
-            else if (@option == "TableID")
-            {
-                <option value="BillId">ID Hóa đơn</option>
-            <option value="TableID" selected>ID Bàn</option>
-            }
-        </select> *@
-        <select name="SearchOption">
-            <option value="BillId" selected="@((ViewData["CurrentFilter_option"] as string) == "BillId")">ID Hóa đơn</option>
-            <option value="TableID" selected="@((ViewData["CurrentFilter_option"] as string) == "TableID")">ID Bàn</option>
-        </select>
-        <input type="text" name="searchString_id" value="@ViewData["CurrentFilter_id"]" placeholder="Id tìm kiếm..."/>
-        <div>
-            @ViewBag.Message
-        </div>
-        <label>Thời gian từ</label>
-        <input type="date" name="searchString_startTime" value="@((ViewData["CurrentFilter_startTime"] as DateOnly?)?.ToString("yyyy-MM-dd"))" />
-        <label>đến</label>
-        <input type="date" name="searchString_endTime" value="@((ViewData["CurrentFilter_endTime"] as DateOnly?)?.ToString("yyyy-MM-dd"))" />
-        <input type="submit" value="Lọc" />
-    </form>
+    <div>
+        <form asp-action="Index" method="get">
+            <div>
+                <label>Tìm kiếm theo mã hóa đơn</label>
+                <input type="text" name="search_billid" value="@ViewData["search_billid"]" placeholder="Nhập mã hóa đơn...">
+            </div>
+            <div>
+                <label>Tìm kiếm theo mã bàn</label>
+                <input type="text" name="search_tablename" value="@ViewData["search_tablename"]" placeholder="Nhập mã bàn...">
+            </div>
+            <div>
+                <label>Tìm kiếm theo thời gian</label>
+                <label>Thời gian từ</label>
+                <input type="date" name="search_fromdate" value="@((ViewData["search_fromdate"] as DateOnly?)?.ToString("yyyy-MM-dd"))">
+                <label>đến</label>
+                <input type="date" name="search_todate" value="@((ViewData["search_todate"] as DateOnly?)?.ToString("yyyy-MM-dd"))">
+            </div>
+            <input type="submit" value="Lọc" />
+        </form>
+    </div>
     <a asp-action="Index">Back to Full List</a>
 
 <table class="table">
     <thead>
         <tr>
             <th>
-                ID HÓA ĐƠN
+                MÃ HÓA ĐƠN
             </th>
             <th>
-                ID BÀN
+                BÀN
+            </th>
+            <th>
+                KHÁCH HÀNG
+            </th>
+            <th>
+                SỐ ĐIỆN THOẠI
+            </th>
+            <th>
+                THỜI GIAN
             </th>
             <th>
                 TỔNG TIỀN
             </th>
             <th>
-               THỜI GIAN
-            </th>
-            <th>
                 NHÂN VIÊN
             </th>
-            <th>Chức năng</th>
+            <th>CHỨC NĂNG</th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
-            <tr>
+        <tr>
             <td>
-               @Html.DisplayFor(modelItem => item.BillId)
+                @Html.DisplayFor(modelItem => item.BillId)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Table.TableId)
+                @Html.DisplayFor(modelItem => item.TableName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.TotalPrice)
+                @Html.DisplayFor(modelItem => item.CustomerName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Sdt)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.BillDate)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.TotalAmount)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.UserInfo.FullName)
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.BillId">Chi tiết</a>
+                @* <a asp-action="Details" asp-route-id="@item.BillId">Details</a>   *@
+                 <button class="btn btn-primary btn-edit" data-billid="@item.BillId">Edit</button>
+
                 <form asp-action="Delete" asp-route-id="@item.BillId" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa hóa đơn này không?');">
                     <button type="submit" class="btn btn-danger">Delete</button>
                 </form>
@@ -112,35 +130,129 @@
 }
     </tbody>
 </table>
-    <!-- Phân trang -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <!-- Phân trang -->
-                <nav aria-label="Page navigation">
-                    <ul class="pagination justify-content-center">
-                        @if (Model.PageCount > 1)
+<!-- Phân trang -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Phân trang -->
+            <nav aria-label="Page navigation">
+                <ul class="pagination justify-content-center">
+                    @if (Model.PageCount > 1)
+                    {
+                        for (int i = 1; i <= Model.PageCount; i++)
                         {
-                            for (int i = 1; i <= Model.PageCount; i++)
-                            {
-                                <li class="page-item @(Model.PageNumber == i ? "active" : "")">
-                                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
-                                </li>
-                            }
+                            <li class="page-item @(Model.PageNumber == i ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                            </li>
                         }
-                    </ul>
-                </nav>
-            </div>
+                    }
+                </ul>
+            </nav>
         </div>
     </div>
+</div>
 
-    <!-- Hiển thị số trang và số món -->
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <p>Số trang: @Model.PageCount</p>
-                <p>Số hóa đơn: @Model.TotalItemCount</p>
+<!-- Hiển thị số trang và số món -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+                <span>Số trang: @Model.PageCount</span> | <span>Số hóa đơn: @Model.TotalItemCount</span>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Modal for Edit -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editModalLabel">Edit Bill</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <!-- Form chỉnh sửa sẽ được load ở đây -->
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        // Lấy tham chiếu của các input
+        var billIdInput = document.querySelector('input[name="search_billid"]');
+        var tableNameInput = document.querySelector('input[name="search_tablename"]');
+        var searchfromdate = document.querySelector('input[name="search_fromdate"]');
+        var searchtodate = document.querySelector('input[name="search_todate"]');
+
+        // Kiểm tra giá trị của input "mã hóa đơn"
+        if (billIdInput.value.trim() !== '') {
+            // Nếu có giá trị, disable input "mã bàn" và các input thời gian
+            tableNameInput.disabled = true;
+            searchfromdate.disabled = true;
+            searchtodate.disabled = true;
+        } else {
+            // Nếu không có giá trị, enable tất cả các input
+            tableNameInput.disabled = false;
+            searchfromdate.disabled = false;
+            searchtodate.disabled = false;
+        }
+        if (tableNameInput.value.trim() !== '') {
+            billIdInput.disabled = true;
+        } else {
+            billIdInput.disabled = false;
+        }
+        // Kiểm tra sự kiện khi người dùng nhập vào input "mã hóa đơn"
+        billIdInput.addEventListener('input', function () {
+            // Nếu input "mã hóa đơn" không rỗng
+            if (billIdInput.value.trim() !== '') {
+                console.log('Input event fired');
+                // Vô hiệu hóa input "mã bàn" và xóa giá trị của nó
+                tableNameInput.disabled = true;
+                tableNameInput.value = '';
+
+                searchfromdate.disabled = true;
+                searchfromdate.value = '';
+
+                searchtodate.disabled = true;
+                searchtodate.value = '';
+            } else {
+                // Kích hoạt input "mã bàn" khi input "mã hóa đơn" rỗng
+                tableNameInput.disabled = false;
+                searchfromdate.disabled = false;
+                searchtodate.disabled = false;
+            }
+        });
+
+        // Kiểm tra sự kiện khi người dùng nhập vào input "mã bàn"
+        tableNameInput.addEventListener('input', function () {
+            // Nếu input "mã bàn" không rỗng
+            if (tableNameInput.value.trim() !== '') {
+                // Vô hiệu hóa input "mã hóa đơn" và xóa giá trị của nó
+                billIdInput.disabled = true;
+                billIdInput.value = '';
+            } else {
+                // Kích hoạt input "mã hóa đơn" khi input "mã bàn" rỗng
+                billIdInput.disabled = false;
+            }
+        });
+
+        $(document).ready(function () {
+            // Xử lý sự kiện click nút Edit
+            $('.btn-edit').click(function () {
+                var billId = $(this).data('billid');
+                var url = '@Url.Action("Edit", "Revenu")' + '/' + billId; // Tạo đường dẫn với id
+                $.ajax({
+                    url: url, // Đường dẫn đến action chỉnh sửa với id
+                    type: 'GET',
+                    success: function (result) {
+                        $('#editModal .modal-body').html(result);
+                        $('#editModal').modal('show');
+                    }
+                });
+            });
+        });
+    });
+</script>

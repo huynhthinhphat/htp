@@ -10,7 +10,7 @@ namespace MVC_QLNH.Controllers
         //Đây là khai báo của một biến db kiểu SqlMvcQlnhPerfactContext.
         //Biến này được sử dụng để truy cập và tương tác với cơ sở dữ liệu.
         //Dùng private readonly để đảm bảo rằng biến chỉ được gán giá trị một lần và không thể thay đổi sau khi đã được gán.
-        private readonly SqlMvcQlnhPerfactContext db;
+        private readonly LatMvcQlnhContext db;
 
         //Tương tự như trên, đây là khai báo của một biến _logger kiểu ILogger<HomeController>.
         //ILogger là một giao diện được sử dụng để ghi logs trong ứng dụng.
@@ -19,7 +19,7 @@ namespace MVC_QLNH.Controllers
 
         //Tham số logger được sử dụng để inject một instance của ILogger vào HomeController
         //trong khi _db là một instance của SqlMvcQlnhPerfactContext được inject để sử dụng trong HomeController.
-        public HomeController(ILogger<HomeController> logger, SqlMvcQlnhPerfactContext _db)
+        public HomeController(ILogger<HomeController> logger, LatMvcQlnhContext _db)
         {
             _logger = logger;
             db = _db;
@@ -27,42 +27,40 @@ namespace MVC_QLNH.Controllers
         public async Task<IActionResult> Index()
         {
             //ngày hiện tại
-            DateOnly today = DateOnly.FromDateTime(DateTime.Today);
+            DateOnly today = DateOnly.FromDateTime(DateTime.UtcNow.Date);
 
-            // tổng tiền
+            // Tổng tiền
             var data_totalAmount = db.TbBillHistories
                 .Where(res => res.BillDate == today)
-                .Sum(res => res.TotalPrice);
+                .Sum(res => res.TotalAmount);
 
-            //tổng khách
-            var data_totalCustom = db.TbBillHistories
-                .Where(res => res.BillDate == today && res.BillId != null)
-                .Count();
+            // Tính tổng số lượng khách cho ngày hiện tại
+            int data_totalCustom = db.TbBillHistories
+                .Count(res => res.BillDate == today);
 
             //tổng bàn trống
             var data_totalTableEmpty = db.TbDstables.Count(res => res.Status == "Trống");
 
             //in id food bán chạy nhất trong ngày
-            var data_bestSell = db.TbBillHistories
-                .Where(res => res.BillDate == today && res.FoodId != null)
-                .GroupBy(res => res.FoodId)
-                .OrderByDescending(group => group.Count())
-                .Select(group => group.Key)
-                .FirstOrDefault();
-
-            //tìm kiếm sản phẩm dựa vào id food có số lượt bán nhiều nhất
-            var data_nameFoodBestSell = db.TbFoods
-                .Where(res => res.FoodId == data_bestSell)
-                .FirstOrDefault();
+            var data_nameFoodBestSell = db.TbBillHistories
+             .GroupBy(res => res.FoodName)
+             .Select(group => new
+             {
+                 FoodName = group.Key,
+                 TotalQuantity = group.Sum(item => item.Quantity)
+             })
+             .OrderByDescending(item => item.TotalQuantity)
+             .Select(item => item.FoodName)
+             .FirstOrDefault();
 
             // Số lần xuất hiện của sản phẩm đó
             int occurrencesOfProduct = db.TbBillHistories
-                .Where(res => res.BillDate == today && res.FoodId == data_bestSell)
+                .Where(res => res.BillDate == today && res.FoodName == data_nameFoodBestSell)
                 .Sum(res => res.Quantity);
 
             // Tổng số lần xuất hiện của tất cả các sản phẩm/ tính theo số lượng sản phẩm đã bán
             int totalOccurrences = db.TbBillHistories
-                .Where(res => res.BillDate == today && res.FoodId != null)
+                .Where(res => res.BillDate == today && res.FoodName != null)
                 .Sum(res => res.Quantity);
 
             // Tính phần trăm
@@ -74,8 +72,7 @@ namespace MVC_QLNH.Controllers
                 .Take(5) // Chỉ lấy 5 phần tử đầu tiên
                 .ToList(); // Chuyển kết quả thành danh sách
 
-            //biểu đồ doanh thu=
-
+            //biểu đồ doanh thu
             var monthlyTotalList = db.TbBillHistories
                 .GroupBy(x => new { x.BillDate.Year, x.BillDate.Month, x.BillDate.Day }) // Nhóm theo năm và tháng
                 .Select(g => new
@@ -83,21 +80,21 @@ namespace MVC_QLNH.Controllers
                     Year = g.Key.Year,
                     Month = g.Key.Month,
                     Day = g.Key.Day,
-                    TotalAmount = g.Sum(x => x.TotalPrice) // Tính tổng tiền từng tháng
+                    TotalAmount = g.Sum(x => x.TotalAmount) // Tính tổng tiền từng tháng
                 })
                 .OrderBy(x => x.Year)
                 .ThenBy(x => x.Month)
-                .Select(x => new MonthlyTotalItem{Year = x.Year, Month = x.Month, Day = x.Day, TotalAmount = x.TotalAmount})
+                .Select(x => new MonthlyTotalItem { Year = x.Year, Month = x.Month, Day = x.Day, TotalAmount = x.TotalAmount })
                 .ToList();
 
-                if (data_nameFoodBestSell == null)
-                {
-                    data_nameFoodBestSell = null;
-                }
-                if (data_detailTable == null)
-                {
-                    data_detailTable = null;
-                }
+            if (data_nameFoodBestSell == null)
+            {
+                data_nameFoodBestSell = null;
+            }
+            if (data_detailTable == null)
+            {
+                data_detailTable = null;
+            }
 
             var viewModel = new MyViewModel
             {
@@ -122,10 +119,10 @@ namespace MVC_QLNH.Controllers
         }
         public class MyViewModel
         {
-            public double totalAmount { get; set; }
+            public int totalAmount { get; set; }
             public int totalCustom { get; set; }
             public double totalTableEmpty { get; set; }
-            public TbFood nameFoodBestSell { get; set; }
+            public string nameFoodBestSell { get; set; }
             public double percentage { get; set; }
             public List<TbBillHistory> detailTable { get; set; }
             public List<MonthlyTotalItem> monthlyTotal { get; set; }

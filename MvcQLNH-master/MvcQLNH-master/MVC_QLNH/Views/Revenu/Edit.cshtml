@@ -10,23 +10,13 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="BillId" />
             <div class="form-group">
-                <label asp-for="TableID" class="control-label"></label>
-                <select asp-for="TableID" class="form-control" asp-items="ViewBag.TableID"></select>
-                <span asp-validation-for="TableID" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserInfoId" class="control-label"></label>
-                <select asp-for="UserInfoId" class="form-control" asp-items="ViewBag.UserInfoId"></select>
-                <span asp-validation-for="UserInfoId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="FoodId" class="control-label"></label>
-                <select asp-for="FoodId" class="form-control" asp-items="ViewBag.FoodId"></select>
-                <span asp-validation-for="FoodId" class="text-danger"></span>
+                <label asp-for="FoodName" class="control-label"></label>
+                <input asp-for="FoodName" class="form-control" />
+                <span asp-validation-for="FoodName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Quantity" class="control-label"></label>
@@ -39,14 +29,34 @@
                 <span asp-validation-for="Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="TotalPrice" class="control-label"></label>
-                <input asp-for="TotalPrice" class="form-control" />
-                <span asp-validation-for="TotalPrice" class="text-danger"></span>
+                <label asp-for="TableName" class="control-label"></label>
+                <input asp-for="TableName" class="form-control" />
+                <span asp-validation-for="TableName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="BillDate" class="control-label"></label>
                 <input asp-for="BillDate" class="form-control" />
                 <span asp-validation-for="BillDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TotalAmount" class="control-label"></label>
+                <input asp-for="TotalAmount" class="form-control" />
+                <span asp-validation-for="TotalAmount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserInfoId" class="control-label"></label>
+                <select asp-for="UserInfoId" class="form-control" asp-items="ViewBag.UserInfoId"></select>
+                <span asp-validation-for="UserInfoId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CustomerName" class="control-label"></label>
+                <input asp-for="CustomerName" class="form-control" />
+                <span asp-validation-for="CustomerName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Sdt" class="control-label"></label>
+                <input asp-for="Sdt" class="form-control" />
+                <span asp-validation-for="Sdt" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

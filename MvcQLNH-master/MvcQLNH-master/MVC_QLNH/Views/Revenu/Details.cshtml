@@ -4,54 +4,65 @@
     ViewData["Title"] = "Details";
 }
 
-
+<h1>Details</h1>
 
 <div>
-    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">CHI TIẾT HÓA ĐƠN</h1>
-    </div>
+    <h4>TbBillHistory</h4>
+    <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            SỐ LƯỢNG
+            @Html.DisplayNameFor(model => model.FoodName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FoodName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Quantity)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Quantity)
         </dd>
         <dt class = "col-sm-2">
-            GIÁ TIỀN
+            @Html.DisplayNameFor(model => model.Price)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Price)
         </dd>
         <dt class = "col-sm-2">
-            TỔNG TIỀN
+            @Html.DisplayNameFor(model => model.TableName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TotalPrice)
+            @Html.DisplayFor(model => model.TableName)
         </dd>
         <dt class = "col-sm-2">
-            THỜI GIAN
+            @Html.DisplayNameFor(model => model.BillDate)
         </dt>
         <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.BillDate)
         </dd>
         <dt class = "col-sm-2">
-            TÊN MÓN
+            @Html.DisplayNameFor(model => model.TotalAmount)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Food.FoodName)
+            @Html.DisplayFor(model => model.TotalAmount)
         </dd>
         <dt class = "col-sm-2">
-            BÀN SỐ
+            @Html.DisplayNameFor(model => model.CustomerName)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Table.TableId)
+            @Html.DisplayFor(model => model.CustomerName)
         </dd>
         <dt class = "col-sm-2">
-            NHÂN VIÊN
+            @Html.DisplayNameFor(model => model.Sdt)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.UserInfo.FullName)
+            @Html.DisplayFor(model => model.Sdt)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.UserInfo)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.UserInfo.UserInfoId)
         </dd>
     </dl>
 </div>

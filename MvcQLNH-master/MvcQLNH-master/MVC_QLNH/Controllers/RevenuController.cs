@@ -1,115 +1,79 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Tokens;
 using MVC_QLNH.Models;
 using X.PagedList;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace MVC_QLNH.Controllers
 {
     public class RevenuController : Controller
     {
-        private readonly SqlMvcQlnhPerfactContext _context;
+        private readonly LatMvcQlnhContext _context;
 
-        public RevenuController(SqlMvcQlnhPerfactContext context)
+        public RevenuController(LatMvcQlnhContext context)
         {
             _context = context;
         }
 
         // GET: Revenu
-        public async Task<IActionResult> Index(int? page, int? searchString_id, string searchOption, DateOnly? searchString_startTime, DateOnly? searchString_endTime)
+        public async Task<IActionResult> Index(int? page, int? search_billid, string? search_tablename, DateOnly? search_fromdate, DateOnly? search_todate)
         {
-            var data = from s in _context.TbBillHistories.Include(t => t.Food).Include(t => t.Table).Include(t => t.UserInfo) select s;
+            var latMvcQlnhContext = from s in _context.TbBillHistories.Include(t => t.UserInfo) select s;
+
+            ViewData["search_billid"] = search_billid;
+            ViewData["search_tablename"] = search_tablename;
+            ViewData["search_fromdate"] = search_fromdate;
+            ViewData["search_todate"] = search_todate;
+
+            if (search_billid != null)
+            {
+                latMvcQlnhContext = latMvcQlnhContext.Where(s => s.BillId == search_billid);
+
+            }else if (search_billid == null && search_tablename != null)
+            {
+                if (search_fromdate.HasValue && search_todate.HasValue)
+                {
+                    latMvcQlnhContext = latMvcQlnhContext.Where(s => s.TableName == "Bàn " + search_tablename && search_fromdate <= s.BillDate && s.BillDate <= search_todate);
+                }
+                else if (search_fromdate.HasValue && !search_todate.HasValue)
+                {
+                    latMvcQlnhContext = latMvcQlnhContext.Where(s => s.TableName == "Bàn " + search_tablename && search_fromdate <= s.BillDate);
+                }
+                else if (!search_fromdate.HasValue && search_todate.HasValue)
+                {
+                    latMvcQlnhContext = latMvcQlnhContext.Where(s => s.TableName == "Bàn " + search_tablename && s.BillDate <= search_todate);
+                }else if (!search_fromdate.HasValue && !search_todate.HasValue)
+                {
+                    latMvcQlnhContext = latMvcQlnhContext.Where(s => s.TableName == "Bàn " + search_tablename);
+                }
+            }
+            else if (search_billid == null && search_tablename == null)
+            {
+                latMvcQlnhContext = latMvcQlnhContext.Where(s => search_fromdate <= s.BillDate && s.BillDate <= search_todate);
+            }
+
+
+            if (search_billid == null && search_tablename == null && !search_fromdate.HasValue && !search_todate.HasValue)
+            {
+                latMvcQlnhContext = from s in _context.TbBillHistories.Include(t => t.UserInfo) select s;
+            }
 
             // Số dòng trên mỗi trang
-            int pageSize = 2;
+            int pageSize = 3;
 
             // Trang hiện tại, nếu không có thì mặc định là trang 1
             int pageNumber = (page ?? 1);
 
-            ViewData["CurrentFilter_id"] = searchString_id;
-            ViewData["CurrentFilter_startTime"] = searchString_startTime;
-            ViewData["CurrentFilter_endTime"] = searchString_endTime;
-            ViewData["CurrentFilter_option"] = searchOption;
-
-            if (searchString_id != null)
-            {
-                switch (searchOption)
-                {
-                    case "BillId":
-                        // Lọc dữ liệu theo BillId
-                        data = data.Where(s => s.BillId == searchString_id);
-                        break;
-                    case "TableID":
-                        if (searchString_startTime.HasValue && searchString_endTime.HasValue)
-                        {
-                            if (searchString_startTime.Value > searchString_endTime.Value)
-                            {
-                                ModelState.AddModelError("", "Ngày bắt đầu phải nhỏ hơn ngày kết thúc.");
-                            }
-                            else
-                            {
-                                // Lọc dữ liệu theo TableID và thời gian
-                                data = data.Where(s => s.BillDate >= searchString_startTime.Value && s.BillDate <= searchString_endTime.Value && s.TableID == searchString_id);
-                            }
-                        }
-                        else if (searchString_startTime.HasValue)
-                        {
-                            // Lọc dữ liệu theo TableID và thời gian bắt đầu
-                            data = data.Where(s => s.BillDate >= searchString_startTime.Value && s.TableID == searchString_id);
-                        }
-                        else if (searchString_endTime.HasValue)
-                        {
-                            // Lọc dữ liệu theo TableID và thời gian kết thúc
-                            data = data.Where(s => s.BillDate <= searchString_endTime.Value && s.TableID == searchString_id);
-                        }
-                        else
-                        {
-                            // Lọc dữ liệu chỉ theo TableID
-                            data = data.Where(s => s.TableID == searchString_id);
-                        }
-                        break;
-                }
-            }
-            else
-            {
-                if (searchString_startTime.HasValue && searchString_endTime.HasValue)
-                {
-                    if (searchString_startTime.Value > searchString_endTime.Value)
-                    {
-                        ViewBag.Message = "NHẬP SAI THỜI GIAN Ĩ MẸ MÀI!";
-                    }
-                    else
-                    {
-                        // Lọc dữ liệu theo TableID và thời gian
-                        data = data.Where(s => s.BillDate >= searchString_startTime.Value && s.BillDate <= searchString_endTime.Value);
-                    }
-                   
-                }
-                else if (searchString_startTime.HasValue)
-                {
-                    // Lọc dữ liệu theo TableID và thời gian bắt đầu
-                    data = data.Where(s => s.BillDate >= searchString_startTime.Value);
-                }
-                else if (searchString_endTime.HasValue)
-                {
-                    // Lọc dữ liệu theo TableID và thời gian kết thúc
-                    data = data.Where(s => s.BillDate <= searchString_endTime.Value);
-                }
-            }
 
             // Phân trang dữ liệu và trả về view
-            var pagedData = await data.AsNoTracking().ToPagedListAsync(pageNumber, pageSize);
+            var pagedData = await latMvcQlnhContext.AsNoTracking().ToPagedListAsync(pageNumber, pageSize);
             return View(pagedData);
         }
-
-
 
         // GET: Revenu/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -120,8 +84,6 @@ namespace MVC_QLNH.Controllers
             }
 
             var tbBillHistory = await _context.TbBillHistories
-                .Include(t => t.Food)
-                .Include(t => t.Table)
                 .Include(t => t.UserInfo)
                 .FirstOrDefaultAsync(m => m.BillId == id);
             if (tbBillHistory == null)
@@ -133,20 +95,18 @@ namespace MVC_QLNH.Controllers
         }
 
         // GET: Revenu/Create
-        /*public IActionResult Create()
+        public IActionResult Create()
         {
-            ViewData["FoodId"] = new SelectList(_context.TbFoods, "FoodId", "FoodId");
-            ViewData["TableID"] = new SelectList(_context.TbDstables, "TableId", "TableId");
             ViewData["UserInfoId"] = new SelectList(_context.TbUserInfos, "UserInfoId", "UserInfoId");
             return View();
-        }*/
+        }
 
         // POST: Revenu/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        /*[HttpPost]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("BillId,TableID,UserInfoId,FoodId,Quantity,Price,TotalPrice,BillDate")] TbBillHistory tbBillHistory)
+        public async Task<IActionResult> Create([Bind("BillId,FoodName,Quantity,Price,TableName,BillDate,TotalAmount,UserInfoId,CustomerName,Sdt")] TbBillHistory tbBillHistory)
         {
             if (ModelState.IsValid)
             {
@@ -154,11 +114,9 @@ namespace MVC_QLNH.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FoodId"] = new SelectList(_context.TbFoods, "FoodId", "FoodId", tbBillHistory.FoodId);
-            ViewData["TableID"] = new SelectList(_context.TbDstables, "TableId", "TableId", tbBillHistory.TableID);
             ViewData["UserInfoId"] = new SelectList(_context.TbUserInfos, "UserInfoId", "UserInfoId", tbBillHistory.UserInfoId);
             return View(tbBillHistory);
-        }*/
+        }
 
         // GET: Revenu/Edit/5
         public async Task<IActionResult> Edit(int? id)
@@ -173,10 +131,9 @@ namespace MVC_QLNH.Controllers
             {
                 return NotFound();
             }
-            ViewData["FoodId"] = new SelectList(_context.TbFoods, "FoodId", "FoodName", tbBillHistory.FoodId);
-            ViewData["TableID"] = new SelectList(_context.TbDstables, "TableId", "TableId", tbBillHistory.TableID);
-            ViewData["UserInfoId"] = new SelectList(_context.TbUserInfos, "UserInfoId", "FullName", tbBillHistory.UserInfoId);
-            return View(tbBillHistory);
+            ViewData["UserInfoId"] = new SelectList(_context.TbUserInfos, "UserInfoId", "UserInfoId", tbBillHistory.UserInfoId);
+
+            return PartialView("Edit", tbBillHistory);
         }
 
         // POST: Revenu/Edit/5
@@ -184,7 +141,7 @@ namespace MVC_QLNH.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("BillId,TableID,UserInfoId,FoodId,Quantity,Price,TotalPrice,BillDate")] TbBillHistory tbBillHistory)
+        public async Task<IActionResult> Edit(int id, [Bind("BillId,FoodName,Quantity,Price,TableName,BillDate,TotalAmount,UserInfoId,CustomerName,Sdt")] TbBillHistory tbBillHistory)
         {
             if (id != tbBillHistory.BillId)
             {
@@ -211,8 +168,6 @@ namespace MVC_QLNH.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["FoodId"] = new SelectList(_context.TbFoods, "FoodId", "FoodId", tbBillHistory.FoodId);
-            ViewData["TableID"] = new SelectList(_context.TbDstables, "TableId", "TableId", tbBillHistory.TableID);
             ViewData["UserInfoId"] = new SelectList(_context.TbUserInfos, "UserInfoId", "UserInfoId", tbBillHistory.UserInfoId);
             return View(tbBillHistory);
         }
@@ -226,8 +181,6 @@ namespace MVC_QLNH.Controllers
             }
 
             var tbBillHistory = await _context.TbBillHistories
-                .Include(t => t.Food)
-                .Include(t => t.Table)
                 .Include(t => t.UserInfo)
                 .FirstOrDefaultAsync(m => m.BillId == id);
             if (tbBillHistory == null)

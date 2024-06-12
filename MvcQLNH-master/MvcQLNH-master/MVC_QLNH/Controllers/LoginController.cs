@@ -5,7 +5,7 @@ namespace MVC_QLNH.Controllers
 {
     public class LoginController : Controller
     {
-        SqlMvcQlnhPerfactContext db = new SqlMvcQlnhPerfactContext();
+        LatMvcQlnhContext db = new LatMvcQlnhContext();
         [HttpGet]
         public IActionResult Index()
         {

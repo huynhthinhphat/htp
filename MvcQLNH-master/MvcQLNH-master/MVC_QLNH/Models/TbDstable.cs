@@ -11,5 +11,7 @@ public partial class TbDstable
 
     public string Status { get; set; } = null!;
 
-    public virtual ICollection<TbBillHistory> TbBillHistories { get; set; } = new List<TbBillHistory>();
+    public virtual ICollection<TbReport> TbReports { get; set; } = new List<TbReport>();
+
+    public virtual ICollection<TbRevenu> TbRevenus { get; set; } = new List<TbRevenu>();
 }

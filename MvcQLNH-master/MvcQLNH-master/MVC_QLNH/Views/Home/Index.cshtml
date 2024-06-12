@@ -1,5 +1,5 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
 }
 
 @{
@@ -102,7 +102,7 @@
                             }
                             else
                             {
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">@data_HomeController.nameFoodBestSell.FoodName (@data_HomeController.percentage.ToString("#,##0")%)</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">@data_HomeController.nameFoodBestSell (@data_HomeController.percentage.ToString("#,##0")%)</div>
                             }
                         </div>
                         <div class="col-auto">
@@ -149,7 +149,7 @@
                             @foreach (var data in @data_HomeController.detailTable)
                             {
                             <tr class="text-center">
-                            <th style="border-bottom: 1px solid #e3e6f0;" align="center" scope="row">ID_@data.BillId: Bàn @data.TableID vừa thanh toán @data.TotalPrice vnd</th>
+                            <th style="border-bottom: 1px solid #e3e6f0;" align="center" scope="row">ID_@data.BillId: Bàn @data.TableName vừa thanh toán @data.TotalAmount vnd</th>
                             </tr>
                             }
                         </table>
@@ -222,7 +222,7 @@
                 }],
                 yAxes: [{
                     ticks: {
-                        maxTicksLimit: 12,
+                        maxTicksLimit: 5,
                         padding: 10
                     },
                     gridLines: {

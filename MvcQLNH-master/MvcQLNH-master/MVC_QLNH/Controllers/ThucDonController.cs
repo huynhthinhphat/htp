@@ -9,7 +9,7 @@ namespace MVC_QLNH.Controllers
     public class ThucDonController : Controller
     {
 
-        SqlMvcQlnhPerfactContext db = new SqlMvcQlnhPerfactContext();
+        LatMvcQlnhContext db = new LatMvcQlnhContext();
         
         public IActionResult Index(int? page)
         {

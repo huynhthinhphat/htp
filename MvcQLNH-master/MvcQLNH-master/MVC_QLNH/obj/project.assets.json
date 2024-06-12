@@ -8354,6 +8354,7 @@
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.6",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 8.0.2",
       "PagedList.Mvc >= 4.5.0",
+      "X.PagedList >= 9.1.2",
       "X.PagedList.Mvc.Core >= 9.1.2"
     ]
   },
@@ -8427,6 +8428,10 @@
           "PagedList.Mvc": {
             "target": "Package",
             "version": "[4.5.0, )"
+          },
+          "X.PagedList": {
+            "target": "Package",
+            "version": "[9.1.2, )"
           },
           "X.PagedList.Mvc.Core": {
             "target": "Package",

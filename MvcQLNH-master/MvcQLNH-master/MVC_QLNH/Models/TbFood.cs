@@ -7,7 +7,7 @@ public partial class TbFood
 {
     public int FoodId { get; set; }
 
-    public string? FoodName { get; set; }
+    public string FoodName { get; set; } = null!;
 
     public int? DmfoodId { get; set; }
 
@@ -17,5 +17,5 @@ public partial class TbFood
 
     public virtual TbDmfood? Dmfood { get; set; }
 
-    public virtual ICollection<TbBillHistory> TbBillHistories { get; set; } = new List<TbBillHistory>();
+    public virtual ICollection<TbReport> TbReports { get; set; } = new List<TbReport>();
 }
