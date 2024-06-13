@@ -4,22 +4,42 @@
     ViewData["Title"] = "Index";
 }
 <style>
-    td {
-        text-align: center;
-        background-color: #fff;
-    }
-    .table thead th {
-        text-align: center;
-        background-color: #f8f9fc;
-    }
-
     .table {
-        box-shadow: 0 .15rem 1.75rem 0 rgba(58, 59, 69, .15) !important;
+        width: 100%;
+        border-collapse: collapse;
+        border-right: 1px solid #ddd;
+        border-left: 1px solid #ddd;
     }
 
-    .table td{
-        padding: .4rem 0rem;
-        vertical-align: middle;
+    .table th {
+        background-color: #007bff; 
+        color: #fff;
+        padding: 10px; 
+        text-align: center; 
+    }
+
+    .table td {
+        border-bottom: 1px solid #ddd; 
+        text-align:center;
+    }
+    .table td:last-child{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    .btn {
+        padding: 5px 10px; 
+        border: none; 
+        cursor: pointer;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+    }
+
+    .btn-danger {
+        background-color: #dc3545; 
+        color: #fff; 
     }
 
     #content_index {
@@ -28,11 +48,126 @@
         padding: 0px 2%;
     }
 
-    .table .btn-danger {
-        background-color: #dc3545;
-        color: #fff;
+    #form_search {
+        border: 1.5px solid #ddd;
+        border-radius: 15px;
+        padding: 7px 15px;
     }
 
+    .form-floating input[type="text"],
+    .form-floating input[type="date"] {
+        width: 80%; 
+        margin-bottom: 10px;
+    }
+
+    .form-floating label {
+        margin-left: 8vh; 
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .btn-primary:hover {
+        background-color: #0056b3; 
+    }
+
+    .form_search_text {
+        display:flex;
+        padding-top: 1%;
+        height: 52px;
+    }
+
+    .form_search_text .form-floating{
+        display: flex;
+        justify-content: center;
+    }
+    .form_search_time{
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        padding: 7px 0px;
+    }
+    .form_search_time div label:first-child{
+        padding-left: 5%;
+    }
+    .form_search_time div{
+        padding: 7px 0px 0px 0px;
+    }
+    .form_search_time div:last-child{
+        display:flex;
+        justify-content: center;
+    }
+
+    .input_date label {
+        display:flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        width: 10%;
+    }
+    .input_date div{
+        width: 40%;
+        display:flex;
+        justify-content: center;
+    }
+    .input_date input{
+        width: 100%;
+        border-radius: 12px;
+    }
+
+    .form_btn{
+        width: 95%;
+        display:flex;
+        justify-content: end;
+    }
+    .form-floating{
+        width:50%;
+    }
+    .form-floating>.form-control, .form-floating>.form-select {
+    height: calc(1.5rem + 2px);
+    border-radius: 12px;
+    }
+
+    label {
+        margin-bottom: 0rem;
+    }
+
+    .form-floating > label {
+        font-size: 15px;
+        height: 55%;
+        padding: 0.25rem .75rem;
+    }
+
+    .form-floating > .form-control:focus ~ label, .form-floating > .form-control:not(:placeholder-shown) ~ label, .form-floating > .form-select ~ label {
+        transform: scale(0.85) translateY(-0.5rem) translateX(0.35rem);
+    }
+
+    .form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
+        padding-top: 1.5rem;
+        padding-bottom: .5rem;
+    }
+
+    .btn-edit{
+        background-color: #007bff;
+        border: none;
+        color: #fff;
+        padding: 5px 9px;
+        border-radius: 5px;
+    }
+
+    .custom-modal-size {
+        max-width: 180vh;
+    }
+
+    .col-md-4{
+        width: 100%;
+    }
 </style>
 
 @{
@@ -42,27 +177,38 @@
 <div id="content_index">
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800">DOANH THU</h1>
+        <h3 class="h3 mb-0 text-gray-800">DOANH THU</h3>
     </div>
 
     <div>
-        <form asp-action="Index" method="get">
-            <div>
-                <label>Tìm kiếm theo mã hóa đơn</label>
-                <input type="text" name="search_billid" value="@ViewData["search_billid"]" placeholder="Nhập mã hóa đơn...">
+        <form id="form_search" asp-action="Index" method="get">
+            <div class="form_search_text">
+                <div class="form-floating mb-3">
+                    <input type="text" name="search_billid" value="@ViewData["search_billid"]" placeholder="Nhập mã hóa đơn..." class="form-control" id="floatingInput">
+                    <label for="floatingInput">Tìm kiếm mã hóa đơn</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" name="search_tablename" value="@ViewData["search_tablename"]" placeholder="Nhập số bàn..." class="form-control" id="floatingPassword">
+                    <label for="floatingPassword">Tìm kiếm số bàn</label>
+                </div>
             </div>
-            <div>
-                <label>Tìm kiếm theo mã bàn</label>
-                <input type="text" name="search_tablename" value="@ViewData["search_tablename"]" placeholder="Nhập mã bàn...">
+            <div class="form_search_time">
+                <div>
+                    <label>Tìm kiếm theo thời gian</label>
+                </div>
+                <div class="input_date">
+                    <div>
+                        <input type="date" name="search_fromdate" value="@((ViewData["search_fromdate"] as DateOnly?)?.ToString("yyyy-MM-dd"))" class="form-control">
+                    </div>
+                    <label><span>đến</span></label>
+                    <div>
+                        <input type="date" name="search_todate" value="@((ViewData["search_todate"] as DateOnly?)?.ToString("yyyy-MM-dd"))" class="form-control">
+                    </div>
+                </div>
             </div>
-            <div>
-                <label>Tìm kiếm theo thời gian</label>
-                <label>Thời gian từ</label>
-                <input type="date" name="search_fromdate" value="@((ViewData["search_fromdate"] as DateOnly?)?.ToString("yyyy-MM-dd"))">
-                <label>đến</label>
-                <input type="date" name="search_todate" value="@((ViewData["search_todate"] as DateOnly?)?.ToString("yyyy-MM-dd"))">
+            <div class="form_btn">
+                <button type="submit" / class="btn btn-primary">Tìm kiếm</button>
             </div>
-            <input type="submit" value="Lọc" />
         </form>
     </div>
     <a asp-action="Index">Back to Full List</a>
@@ -119,11 +265,9 @@
                 @Html.DisplayFor(modelItem => item.UserInfo.FullName)
             </td>
             <td>
-                @* <a asp-action="Details" asp-route-id="@item.BillId">Details</a>   *@
-                 <button class="btn btn-primary btn-edit" data-billid="@item.BillId">Edit</button>
-
-                <form asp-action="Delete" asp-route-id="@item.BillId" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa hóa đơn này không?');">
-                    <button type="submit" class="btn btn-danger">Delete</button>
+                <button id="btn-edit" class="btn-edit" data-billid="@item.BillId"><i class="fas fa-edit"></i></button>
+                <form asp-action="Delete" asp-route-id="@item.BillId" method="post" onsubmit="return confirm('Bạn có chắc chắn muốn xóa hóa đơn @item.BillId này không?');">
+                    <button type="submit" class="btn btn-danger"><i class="fa fa-trash"></i></button>
                 </form>
             </td>
         </tr>
@@ -164,13 +308,10 @@
 
 <!-- Modal for Edit -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog custom-modal-size" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="editModalLabel">Edit Bill</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
+                <h5 class="modal-title" id="editModalLabel">Thông tin chi tiết</h5>
             </div>
             <div class="modal-body">
                 <!-- Form chỉnh sửa sẽ được load ở đây -->
@@ -186,6 +327,10 @@
         var tableNameInput = document.querySelector('input[name="search_tablename"]');
         var searchfromdate = document.querySelector('input[name="search_fromdate"]');
         var searchtodate = document.querySelector('input[name="search_todate"]');
+
+        //giá trị input date
+        var value_fromdate = searchfromdate.value;
+        var value_todate = searchtodate.value;
 
         // Kiểm tra giá trị của input "mã hóa đơn"
         if (billIdInput.value.trim() !== '') {
@@ -253,6 +398,19 @@
                     }
                 });
             });
+
+            if (value_fromdate && value_todate) {
+                if (value_fromdate > value_todate) {
+                    confirm("Lỗi: Ngày trước lớn hơn ngày sau")
+                }
+            }
+            // Kiểm tra xem có thông điệp lưu thành công hay không
+            var saveSuccessMessage = '@TempData["SaveSuccessMessage"]';
+            if (saveSuccessMessage == 1) {
+                alert("Lưu thành công"); // Hiển thị thông báo xác nhận
+            } else if (saveSuccessMessage == 2) {
+                alert("Lưu thất bại"); // Hiển thị thông báo xác nhận
+            }
         });
     });
 </script>

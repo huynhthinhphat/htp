@@ -1,74 +1,181 @@
 ﻿@model MVC_QLNH.Models.TbBillHistory
-
 @{
-    ViewData["Title"] = "Edit";
+    Layout = null; // Không sử dụng layout mặc định
 }
+<style>
+    .table-edit {
+        width: 100%;
+        border-collapse: collapse;
+        border-right: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+    }
 
-<h1>Edit</h1>
+    .table-edit th {
+        background-color: #007bff;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+    }
 
-<h4>TbBillHistory</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Edit" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <input type="hidden" asp-for="BillId" />
-            <div class="form-group">
-                <label asp-for="FoodName" class="control-label"></label>
-                <input asp-for="FoodName" class="form-control" />
-                <span asp-validation-for="FoodName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Quantity" class="control-label"></label>
-                <input asp-for="Quantity" class="form-control" />
-                <span asp-validation-for="Quantity" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TableName" class="control-label"></label>
-                <input asp-for="TableName" class="form-control" />
-                <span asp-validation-for="TableName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="BillDate" class="control-label"></label>
-                <input asp-for="BillDate" class="form-control" />
-                <span asp-validation-for="BillDate" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="TotalAmount" class="control-label"></label>
-                <input asp-for="TotalAmount" class="form-control" />
-                <span asp-validation-for="TotalAmount" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="UserInfoId" class="control-label"></label>
-                <select asp-for="UserInfoId" class="form-control" asp-items="ViewBag.UserInfoId"></select>
-                <span asp-validation-for="UserInfoId" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="CustomerName" class="control-label"></label>
-                <input asp-for="CustomerName" class="form-control" />
-                <span asp-validation-for="CustomerName" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Sdt" class="control-label"></label>
-                <input asp-for="Sdt" class="form-control" />
-                <span asp-validation-for="Sdt" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
-        </form>
+    .table-edit td {
+        border-bottom: 1px solid #ddd;
+        text-align: center;
+    }
+
+    .table-edit {
+        width: 100%;
+        border-collapse: collapse;
+        border-right: 1px solid #ddd;
+        border-left: 1px solid #ddd;
+    }
+
+    #table-edit td {
+        padding: 15px 0px;
+    }
+
+    #table-edit input, form select {
+        outline: none;
+        width: 80%;
+        height: 5vh;
+        border-radius: 12px;
+        text-align: center;
+        border: 1px solid darkgray;
+    }
+    .form-save{
+        width: 100%;
+        display: flex;
+        justify-content: end;
+        margin-top: 1%;
+    }
+</style>
+ <form asp-action="Edit" method="post">
+<table class="table-edit" id="table-edit">
+    <thead>
+        <tr>
+            <th>
+                MÃ HÓA ĐƠN
+            </th>
+            <th>
+                BÀN
+            </th>
+            <th>
+                TÊN MÓN ĂN
+            </th>
+            <th>
+                GIÁ
+            </th>
+            <th>
+                SỐ LƯỢNG
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+                <input asp-for="BillId" readonly/>
+            </td>
+            <td>
+                <select asp-for="TableName" asp-items="ViewBag.TableName" required></select>
+            </td>
+            <td>
+                <input asp-for="FoodName" id="foodname" required/>
+            </td>  
+            <td>
+                <input asp-for="Price" id="price" required />
+            </td>
+            <td>
+                <input asp-for="Quantity" id="quantity" required />
+            </td>
+    </tbody>
+        <thead>
+            <tr>
+                <th>
+                    TỔNG TIỀN
+                </th>
+                <th>
+                    THỜI GIAN
+                </th>
+                <th>
+                    KHÁCH HÀNG
+                </th>
+                <th>
+                    SỐ ĐIỆN THOẠI
+                </th>
+                <th>
+                    NHÂN VIÊN
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            </tr>
+            <tr>
+                <td>
+                    <input asp-for="TotalAmount" id="totalamount" required />
+                </td>
+                <td>
+                    <input type="date" asp-for="BillDate" required/>
+                </td>
+                <td>
+                    <input asp-for="CustomerName" required/>
+                </td>
+                <td>
+                    <input asp-for="Sdt" required/>
+                </td>
+                <td>
+                    <select asp-for="UserInfoId" asp-items="ViewBag.FullName"></select>
+                </td>
+            </tr>
+        </tbody>
+</table>
+    <div class="form-save">
+        <input type="submit" value="Save" class="btn btn-primary" />
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+</form>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }
+<script>
+    $(document).ready(function () {
+        function calculateTotalAmount() {
+            // Lấy giá trị của ô input price và quantity
+            var price = parseFloat($("#price").val()) || 0; // Chuyển đổi giá trị sang số thực, nếu không thành công, gán giá trị là 0
+            var quantity = parseFloat($("#quantity").val()) || 0; // Chuyển đổi giá trị sang số thực, nếu không thành công, gán giá trị là 0
+            // Tính tổng giá trị và đặt vào ô totalamount
+            var totalAmount = price * quantity;
+            // Đặt giá trị vào ô totalamount
+            $("#totalamount").val(totalAmount);
+        }
+
+        // Gọi hàm calculateTotalAmount khi có sự kiện input của ô input price và quantity
+        $("#price, #quantity").on("input", function () {
+            calculateTotalAmount();
+        });
+
+        // Bắt sự kiện input của ô input với id là "foodname"
+        $("#foodname").on("input", function () {
+            // Lấy giá trị input ban đầu của price
+            var prePrice = $("#price").val();
+
+            // Lấy giá trị của ô input foodname
+            var foodname = $(this).val();
+
+            // Gửi yêu cầu Ajax để lấy giá tiền của món ăn
+            $.ajax({
+                type: "POST",
+                url: "/Revenu/GetPrice",
+                data: { foodname: foodname },
+                success: function (data) {
+                    // Hiển thị giá tiền trong ô input #price
+                    $("#price").val(data);
+
+                    // Kiểm tra nếu giá trị của ô input #price đã thay đổi so với giá trị ban đầu
+                    if (prePrice !== data) {
+                        calculateTotalAmount();
+                    }
+                }
+            });
+        });
+
+    });
+</script>

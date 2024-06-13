@@ -11,6 +11,69 @@
       "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\views\\revenu\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\controllers\\revenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\controllers\\revenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\models\\tbfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\models\\tbfood.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\views\\revenu\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\views\\revenu\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\wwwroot\\assets\\vendor\\bootstrap\\scss\\_modal.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\wwwroot\\assets\\vendor\\bootstrap\\scss\\_modal.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\wwwroot\\assets\\css\\sb-admin-2.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\wwwroot\\assets\\css\\sb-admin-2.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentfiles\\any\\any\\wwwroot\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentfiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentfiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentfiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\mvc_qlnh.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\mvc_qlnh.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\models\\tbdstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\models\\tbdstable.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\models\\tbbillhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\models\\tbbillhistory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\models\\latmvcqlnhcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\models\\latmvcqlnhcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,24 +82,8 @@
       "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\controllers\\revenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\controllers\\revenucontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\controllers\\thucdoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\controllers\\thucdoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\views\\revenu\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|solutionrelative:mvc_qlnh\\views\\revenu\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{ADC8B9FA-34F1-49D3-9EB3-B90513817B10}|MVC_QLNH\\MVC_QLNH.csproj|c:\\users\\phath\\desktop\\project\\mvcqlnh-master\\mvcqlnh-master\\mvc_qlnh\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -72,45 +119,80 @@
         },
         {
           "DockedWidth": 244,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "LatMvcQlnhContext.cs",
-              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Models\\LatMvcQlnhContext.cs",
-              "RelativeDocumentMoniker": "MVC_QLNH\\Models\\LatMvcQlnhContext.cs",
-              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Models\\LatMvcQlnhContext.cs",
-              "RelativeToolTip": "MVC_QLNH\\Models\\LatMvcQlnhContext.cs",
-              "ViewState": "AQIAAHcAAAAAAAAAAAAMwCYAAAAAAAAA",
+              "DocumentIndex": 3,
+              "Title": "TbFood.cs",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Models\\TbFood.cs",
+              "RelativeDocumentMoniker": "MVC_QLNH\\Models\\TbFood.cs",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Models\\TbFood.cs",
+              "RelativeToolTip": "MVC_QLNH\\Models\\TbFood.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T13:57:26.782Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-13T13:02:39.991Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Program.cs",
-              "RelativeDocumentMoniker": "MVC_QLNH\\Program.cs",
-              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Program.cs",
-              "RelativeToolTip": "MVC_QLNH\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T13:20:21.07Z",
-              "EditorCaption": ""
+              "DocumentIndex": 13,
+              "Title": "bootstrap-utilities.css",
+              "DocumentMoniker": "C:\\Users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css",
+              "ToolTip": "C:\\Users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-utilities.css [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-13T08:45:26.133Z",
+              "EditorCaption": " [Read Only]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Revenu\\Delete.cshtml",
-              "RelativeDocumentMoniker": "MVC_QLNH\\Views\\Revenu\\Delete.cshtml",
-              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Revenu\\Delete.cshtml",
-              "RelativeToolTip": "MVC_QLNH\\Views\\Revenu\\Delete.cshtml",
-              "ViewState": "AQIAABIAAAAAAAAAAADwvzYAAAANAAAA",
+              "DocumentIndex": 9,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "MVC_QLNH\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "MVC_QLNH\\wwwroot\\css\\site.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-13T08:41:58.091Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "MVC_QLNH.csproj",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\MVC_QLNH.csproj",
+              "RelativeDocumentMoniker": "MVC_QLNH\\MVC_QLNH.csproj",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\MVC_QLNH.csproj",
+              "RelativeToolTip": "MVC_QLNH\\MVC_QLNH.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-06-12T19:29:44.866Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "MVC_QLNH\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "MVC_QLNH\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAACQCAAAAAAAAAAAAAD0CAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T10:50:54.301Z"
+              "WhenOpened": "2024-06-12T18:48:22.562Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "TbBillHistory.cs",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Models\\TbBillHistory.cs",
+              "RelativeDocumentMoniker": "MVC_QLNH\\Models\\TbBillHistory.cs",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Models\\TbBillHistory.cs",
+              "RelativeToolTip": "MVC_QLNH\\Models\\TbBillHistory.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAAwBsAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T15:45:48.48Z"
             },
             {
               "$type": "Document",
@@ -120,14 +202,52 @@
               "RelativeDocumentMoniker": "MVC_QLNH\\Views\\Revenu\\Edit.cshtml",
               "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Revenu\\Edit.cshtml",
               "RelativeToolTip": "MVC_QLNH\\Views\\Revenu\\Edit.cshtml",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAwAAAAlAAAA",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAAKYAAAAtAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-06-12T10:43:27.001Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Revenu\\Index.cshtml",
+              "RelativeDocumentMoniker": "MVC_QLNH\\Views\\Revenu\\Index.cshtml",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Revenu\\Index.cshtml",
+              "RelativeToolTip": "MVC_QLNH\\Views\\Revenu\\Index.cshtml",
+              "ViewState": "AQIAAGMAAAAAAAAAAIAwwHgAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-12T09:00:37.874Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RevenuController.cs",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Controllers\\RevenuController.cs",
+              "RelativeDocumentMoniker": "MVC_QLNH\\Controllers\\RevenuController.cs",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Controllers\\RevenuController.cs",
+              "RelativeToolTip": "MVC_QLNH\\Controllers\\RevenuController.cs",
+              "ViewState": "AQIAAJcAAAAAAAAAAAAUwK4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T07:57:53.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "bootstrap.css",
+              "DocumentMoniker": "C:\\Users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css",
+              "ToolTip": "C:\\Users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap.css [Read Only]",
+              "ViewState": "AQIAAHUAAAAAAAAAAIBZwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-13T08:45:30.258Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Details.cshtml",
               "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Revenu\\Details.cshtml",
               "RelativeDocumentMoniker": "MVC_QLNH\\Views\\Revenu\\Details.cshtml",
@@ -139,46 +259,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "MVC_QLNH\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "MVC_QLNH\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAHQAAAAAAAAAAIA5wH8AAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T09:08:48.565Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Revenu\\Index.cshtml",
-              "RelativeDocumentMoniker": "MVC_QLNH\\Views\\Revenu\\Index.cshtml",
-              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Revenu\\Index.cshtml",
-              "RelativeToolTip": "MVC_QLNH\\Views\\Revenu\\Index.cshtml",
-              "ViewState": "AQIAAGIAAAAAAAAAAAAowHkAAABXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-06-12T09:00:37.874Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "RevenuController.cs",
-              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Controllers\\RevenuController.cs",
-              "RelativeDocumentMoniker": "MVC_QLNH\\Controllers\\RevenuController.cs",
-              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Controllers\\RevenuController.cs",
-              "RelativeToolTip": "MVC_QLNH\\Controllers\\RevenuController.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAAAwIcAAAAaAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-12T07:57:53.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "LoginController.cs",
               "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Controllers\\LoginController.cs",
               "RelativeDocumentMoniker": "MVC_QLNH\\Controllers\\LoginController.cs",
@@ -190,7 +271,129 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
+              "Title": "bootstrap-reboot.css",
+              "DocumentMoniker": "C:\\Users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css",
+              "ToolTip": "C:\\Users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-reboot.css [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-13T08:45:27.666Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "bootstrap-grid.css",
+              "DocumentMoniker": "C:\\Users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css",
+              "ToolTip": "C:\\Users\\phath\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css [Read Only]",
+              "RelativeToolTip": "..\\..\\..\\..\\.nuget\\packages\\bootstrap\\5.3.3\\contentFiles\\any\\any\\wwwroot\\css\\bootstrap-grid.css [Read Only]",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-13T08:45:29.595Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_modal.scss",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\wwwroot\\assets\\vendor\\bootstrap\\scss\\_modal.scss",
+              "RelativeDocumentMoniker": "MVC_QLNH\\wwwroot\\assets\\vendor\\bootstrap\\scss\\_modal.scss",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\wwwroot\\assets\\vendor\\bootstrap\\scss\\_modal.scss",
+              "RelativeToolTip": "MVC_QLNH\\wwwroot\\assets\\vendor\\bootstrap\\scss\\_modal.scss",
+              "ViewState": "AQIAALUAAAAAAAAAAAAowLoAAAADAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
+              "WhenOpened": "2024-06-13T08:56:58.298Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "sb-admin-2.css",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\wwwroot\\assets\\css\\sb-admin-2.css",
+              "RelativeDocumentMoniker": "MVC_QLNH\\wwwroot\\assets\\css\\sb-admin-2.css",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\wwwroot\\assets\\css\\sb-admin-2.css",
+              "RelativeToolTip": "MVC_QLNH\\wwwroot\\assets\\css\\sb-admin-2.css",
+              "ViewState": "AQIAABwCAAAAAAAAAAAowDYCAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-06-13T08:52:54.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Revenu\\Delete.cshtml",
+              "RelativeDocumentMoniker": "MVC_QLNH\\Views\\Revenu\\Delete.cshtml",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Revenu\\Delete.cshtml",
+              "RelativeToolTip": "MVC_QLNH\\Views\\Revenu\\Delete.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAADwvzYAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-06-12T10:50:54.301Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Program.cs",
+              "RelativeDocumentMoniker": "MVC_QLNH\\Program.cs",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Program.cs",
+              "RelativeToolTip": "MVC_QLNH\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACMAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T13:20:21.07Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "TbDstable.cs",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Models\\TbDstable.cs",
+              "RelativeDocumentMoniker": "MVC_QLNH\\Models\\TbDstable.cs",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Models\\TbDstable.cs",
+              "RelativeToolTip": "MVC_QLNH\\Models\\TbDstable.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwAcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T16:21:04.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "MVC_QLNH\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "MVC_QLNH\\Controllers\\HomeController.cs",
+              "ViewState": "AQIAAHUAAAAAAAAAAIA1wH8AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T09:08:48.565Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\8.0.300\\Sdks\\Microsoft.NET.Sdk.StaticWebAssets\\targets\\Microsoft.NET.Sdk.StaticWebAssets.targets",
+              "ViewState": "AQIAAOYBAAAAAAAAAAAcwPoBAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2024-06-12T19:22:08.79Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "LatMvcQlnhContext.cs",
+              "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Models\\LatMvcQlnhContext.cs",
+              "RelativeDocumentMoniker": "MVC_QLNH\\Models\\LatMvcQlnhContext.cs",
+              "ToolTip": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Models\\LatMvcQlnhContext.cs",
+              "RelativeToolTip": "MVC_QLNH\\Models\\LatMvcQlnhContext.cs",
+              "ViewState": "AQIAAHcAAAAAAAAAAAAMwCYAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-12T13:57:26.782Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
               "Title": "ThucDonController.cs",
               "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Controllers\\ThucDonController.cs",
               "RelativeDocumentMoniker": "MVC_QLNH\\Controllers\\ThucDonController.cs",
@@ -202,7 +405,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 22,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\phath\\Desktop\\project\\MvcQLNH-master\\MvcQLNH-master\\MVC_QLNH\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "MVC_QLNH\\Views\\Home\\Index.cshtml",
